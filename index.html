@@ -12,12 +12,12 @@
         <img class="logo" src="assets/images/logo.png" alt="logo"> Personality Test
     </h1>
     <p id="instructions">
-Each of the following statements can be answered on a Disagree-Agree scale. <br>Answer these honestly in order to have a unique personality description generated. <br>If you would like to fill the test in again, press the reset button below.
+Each of the following statements is answered on a Disagree-Agree scale. <br>Answer them honestly in order to have a unique personality description generated. <br>If you would like to fill the test in again, press the reset button below.
     </p>
     <div class="test-area">
         <table>
             <tr>
-              <th>I see myself as someone who</th>
+              <th class="prompt">I see myself as someone who</th>
               <th>Strongly Disagree</th>
               <th>Disagree</th>
               <th>Neutral</th>
@@ -25,7 +25,7 @@ Each of the following statements can be answered on a Disagree-Agree scale. <br>
               <th>Strongly Agree</th>
             </tr>
             <tr>
-              <td>... is reserved</td>
+              <td class="prompt">... is reserved</td>
               <td><input type="radio" id="" name="question-1" value=5 /></td>
               <td><input type="radio" id="" name="question-1" value=4 /></td>
               <td><input type="radio" id="" name="question-1" value=3 /></td>
@@ -33,7 +33,7 @@ Each of the following statements can be answered on a Disagree-Agree scale. <br>
               <td><input type="radio" id="" name="question-1" value=1 /></td>
             </tr>
             <tr>
-                <td>.... is generally trusting</td>
+                <td class="prompt">.... is generally trusting</td>
                 <td><input type="radio" id="" name="question-2" value=1 /></td>
                 <td><input type="radio" id="" name="question-2" value=2 /></td>
                 <td><input type="radio" id="" name="question-2" value=3 /></td>
@@ -41,7 +41,7 @@ Each of the following statements can be answered on a Disagree-Agree scale. <br>
                 <td><input type="radio" id="" name="question-2" value=5 /></td>
             </tr>
             <tr>
-                <td> ... tends to be lazy</td>
+                <td class="prompt"> ... tends to be lazy</td>
                 <td><input type="radio" id="" name="question-3" value=5 /></td>
                 <td><input type="radio" id="" name="question-3" value=4 /></td>
                 <td><input type="radio" id="" name="question-3" value=3 /></td>
@@ -49,7 +49,7 @@ Each of the following statements can be answered on a Disagree-Agree scale. <br>
                 <td><input type="radio" id="" name="question-3" value=1 /></td>
               </tr>
               <tr>
-                <td> ... is relaxed, handles stress well</td>
+                <td class="prompt"> ... is relaxed, handles stress well</td>
                 <td><input type="radio" id="" name="question-4" value=5 /></td>
                 <td><input type="radio" id="" name="question-4" value=4 /></td>
                 <td><input type="radio" id="" name="question-4" value=3 /></td>
@@ -57,7 +57,7 @@ Each of the following statements can be answered on a Disagree-Agree scale. <br>
                 <td><input type="radio" id="" name="question-4" value=1 /></td>
               </tr>
               <tr>
-                <td> ... has few artistic interest</td>
+                <td class="prompt"> ... has few artistic interest</td>
                 <td><input type="radio" id="" name="question-5" value=5 /></td>
                 <td><input type="radio" id="" name="question-5" value=4 /></td>
                 <td><input type="radio" id="" name="question-5" value=3 /></td>
@@ -65,7 +65,7 @@ Each of the following statements can be answered on a Disagree-Agree scale. <br>
                 <td><input type="radio" id="" name="question-5" value=1 /></td>
               </tr>
               <tr>
-                <td>... is outgoing, sociable</td>
+                <td class="prompt">... is outgoing, sociable</td>
                 <td><input type="radio" id="" name="question-6" value=1 /></td>
                 <td><input type="radio" id="" name="question-6" value=2 /></td>
                 <td><input type="radio" id="" name="question-6" value=3 /></td>
@@ -73,7 +73,7 @@ Each of the following statements can be answered on a Disagree-Agree scale. <br>
                 <td><input type="radio" id="" name="question-6" value=5 /></td>
             </tr>
               <tr>
-                <td> ... tends to find fault with others</td>
+                <td class="prompt"> ... tends to find fault with others</td>
                 <td><input type="radio" id="" name="question-7" value=5 /></td>
                 <td><input type="radio" id="" name="question-7" value=4 /></td>
                 <td><input type="radio" id="" name="question-7" value=3 /></td>
@@ -81,7 +81,7 @@ Each of the following statements can be answered on a Disagree-Agree scale. <br>
                 <td><input type="radio" id="" name="question-7" value=1 /></td>
               </tr>
               <tr>
-                <td>... does a thorough job</td>
+                <td class="prompt">... does a thorough job</td>
                 <td><input type="radio" id="" name="question-8" value=1 /></td>
                 <td><input type="radio" id="" name="question-8" value=2 /></td>
                 <td><input type="radio" id="" name="question-8" value=3 /></td>
@@ -89,7 +89,7 @@ Each of the following statements can be answered on a Disagree-Agree scale. <br>
                 <td><input type="radio" id="" name="question-8" value=5 /></td>
             </tr>
             <tr>
-                <td>... gets nervous easily</td>
+                <td class="prompt">... gets nervous easily</td>
                 <td><input type="radio" id="" name="question-9" value=1 /></td>
                 <td><input type="radio" id="" name="question-9" value=2 /></td>
                 <td><input type="radio" id="" name="question-9" value=3 /></td>
@@ -97,7 +97,7 @@ Each of the following statements can be answered on a Disagree-Agree scale. <br>
                 <td><input type="radio" id="" name="question-9" value=5 /></td>
             </tr>
             <tr>
-                <td>... has an active imagination</td>
+                <td class="prompt">... has an active imagination</td>
                 <td><input type="radio" id="" name="question-10" value=1 /></td>
                 <td><input type="radio" id="" name="question-10" value=2 /></td>
                 <td><input type="radio" id="" name="question-10" value=3 /></td>
@@ -105,8 +105,10 @@ Each of the following statements can be answered on a Disagree-Agree scale. <br>
                 <td><input type="radio" id="" name="question-10" value=5 /></td>
             </tr>
           </table>
+          <br>
           <button class="btn" id="submit">Submit</button>
           <button class="btn" id="reset">Reset</button>
+          <br>
     </div>
     <div class="result-area">
 <h3> Personality Result: </h3>

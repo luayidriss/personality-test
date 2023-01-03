@@ -1,0 +1,91 @@
+/* Font & Global */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700&display=swap');
+
+body{
+    background-color: white;
+    font-family: Manrope, sans-serif;
+    font-weight: 400;
+    text-align: center;
+    color: #010709;
+    margin: 0;
+}
+
+/* Heading */
+
+.heading {
+    text-align: center;
+    font-size: 2.5rem;
+    background-color: #C4D7F2;
+    margin: 0;
+    padding: 0.5rem;
+}
+
+.logo {
+    height: 40px;
+    padding-right: 5px;
+}
+
+/* Test Area */
+.test-area{
+    background-color: #C4D7F2;
+    font-weight: 600;
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th, td {
+    padding: 7px;
+    text-align: center;
+  }
+
+  .prompt{
+    text-align: left;
+  }
+
+  input[type="radio"] {
+    height: 1.2rem;
+    width: 1.2rem;
+    accent-color: #ca5c6d ;
+  }
+/* Buttons */
+
+.btn {
+  background-color: #EF798A;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 0 5px 10px 0;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #F082AC;
+}
+#submit{
+    background-color: #624763;
+}
+#submit:hover, #submit:focus{
+    background-color: #6b576b;
+}
