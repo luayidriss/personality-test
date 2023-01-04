@@ -1,4 +1,12 @@
 /* Radio Buttons */
+document.addEventListener("DOMContentLoaded", function() {
+    for ( i=0; i<=10; i++ )
+    {
+        let questionNumber = i;
+        return questions=`'input[name="question-`,${questionNumber},`"]:checked`;
+        console.log(questions);
+    }
+}
 
 
 function checkButton() {    
@@ -14,9 +22,9 @@ function checkButton() {
 }    
 
 function calculateExtraversion(){
-    let extra1 = document.querySelector('input[name="question-1"]:checked'.value);
-    let extra2 = document.querySelector('input[name="question-6"]:checked'.value);
-    return [extra1 + extra2, "extraversion"];
+    let extra1 = document.querySelector('input[name="question-1"]:checked').value;
+    let extra2 = document.querySelector('input[name="question-6"]:checked').value;
     let extrascore = calculateExtraversion();
+    return [extra1 + extra2, "extraversion"];
     console.log(extrascore)
 }
