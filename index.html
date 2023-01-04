@@ -14,106 +14,41 @@
     <p id="instructions">
 Each of the following statements is answered on a Disagree-Agree scale. <br>Answer them honestly in order to have a unique personality description generated. <br>If you would like to fill the test in again, press the reset button below.
     </p>
-    <div class="test-area">
-        <table>
-            <tr>
-              <th class="prompt">I see myself as someone who</th>
-              <th>Strongly Disagree</th>
-              <th>Disagree</th>
-              <th>Neutral</th>
-              <th>Agree</th>
-              <th>Strongly Agree</th>
-            </tr>
-            <tr>
-              <td class="prompt">... is reserved</td>
-              <td><input type="radio" id="" name="question-1" value=5 /></td>
-              <td><input type="radio" id="" name="question-1" value=4 /></td>
-              <td><input type="radio" id="" name="question-1" value=3 /></td>
-              <td><input type="radio" id="" name="question-1" value=2 /></td>
-              <td><input type="radio" id="" name="question-1" value=1 /></td>
-            </tr>
-            <tr>
-                <td class="prompt">.... is generally trusting</td>
-                <td><input type="radio" id="" name="question-2" value=1 /></td>
-                <td><input type="radio" id="" name="question-2" value=2 /></td>
-                <td><input type="radio" id="" name="question-2" value=3 /></td>
-                <td><input type="radio" id="" name="question-2" value=4 /></td>
-                <td><input type="radio" id="" name="question-2" value=5 /></td>
-            </tr>
-            <tr>
-                <td class="prompt"> ... tends to be lazy</td>
-                <td><input type="radio" id="" name="question-3" value=5 /></td>
-                <td><input type="radio" id="" name="question-3" value=4 /></td>
-                <td><input type="radio" id="" name="question-3" value=3 /></td>
-                <td><input type="radio" id="" name="question-3" value=2 /></td>
-                <td><input type="radio" id="" name="question-3" value=1 /></td>
-              </tr>
-              <tr>
-                <td class="prompt"> ... is relaxed, handles stress well</td>
-                <td><input type="radio" id="" name="question-4" value=5 /></td>
-                <td><input type="radio" id="" name="question-4" value=4 /></td>
-                <td><input type="radio" id="" name="question-4" value=3 /></td>
-                <td><input type="radio" id="" name="question-4" value=2 /></td>
-                <td><input type="radio" id="" name="question-4" value=1 /></td>
-              </tr>
-              <tr>
-                <td class="prompt"> ... has few artistic interest</td>
-                <td><input type="radio" id="" name="question-5" value=5 /></td>
-                <td><input type="radio" id="" name="question-5" value=4 /></td>
-                <td><input type="radio" id="" name="question-5" value=3 /></td>
-                <td><input type="radio" id="" name="question-5" value=2 /></td>
-                <td><input type="radio" id="" name="question-5" value=1 /></td>
-              </tr>
-              <tr>
-                <td class="prompt">... is outgoing, sociable</td>
-                <td><input type="radio" id="" name="question-6" value=1 /></td>
-                <td><input type="radio" id="" name="question-6" value=2 /></td>
-                <td><input type="radio" id="" name="question-6" value=3 /></td>
-                <td><input type="radio" id="" name="question-6" value=4 /></td>
-                <td><input type="radio" id="" name="question-6" value=5 /></td>
-            </tr>
-              <tr>
-                <td class="prompt"> ... tends to find fault with others</td>
-                <td><input type="radio" id="" name="question-7" value=5 /></td>
-                <td><input type="radio" id="" name="question-7" value=4 /></td>
-                <td><input type="radio" id="" name="question-7" value=3 /></td>
-                <td><input type="radio" id="" name="question-7" value=2 /></td>
-                <td><input type="radio" id="" name="question-7" value=1 /></td>
-              </tr>
-              <tr>
-                <td class="prompt">... does a thorough job</td>
-                <td><input type="radio" id="" name="question-8" value=1 /></td>
-                <td><input type="radio" id="" name="question-8" value=2 /></td>
-                <td><input type="radio" id="" name="question-8" value=3 /></td>
-                <td><input type="radio" id="" name="question-8" value=4 /></td>
-                <td><input type="radio" id="" name="question-8" value=5 /></td>
-            </tr>
-            <tr>
-                <td class="prompt">... gets nervous easily</td>
-                <td><input type="radio" id="" name="question-9" value=1 /></td>
-                <td><input type="radio" id="" name="question-9" value=2 /></td>
-                <td><input type="radio" id="" name="question-9" value=3 /></td>
-                <td><input type="radio" id="" name="question-9" value=4 /></td>
-                <td><input type="radio" id="" name="question-9" value=5 /></td>
-            </tr>
-            <tr>
-                <td class="prompt">... has an active imagination</td>
-                <td><input type="radio" id="" name="question-10" value=1 /></td>
-                <td><input type="radio" id="" name="question-10" value=2 /></td>
-                <td><input type="radio" id="" name="question-10" value=3 /></td>
-                <td><input type="radio" id="" name="question-10" value=4 /></td>
-                <td><input type="radio" id="" name="question-10" value=5 /></td>
-            </tr>
-          </table>
-          <br>
-          <button class="btn" id="submit" onclick=" checkButton()">Submit</button>
-          <button class="btn" id="reset">Reset</button> 
-          <button class="btn" id="submit" onclick=" calculateExtraversion()">Extra</button>
+    <div id="test-area" class="test-area hide">
+      <div id="prompt-container">
+        <div id="prompts">Prompt</div>
+      </div>
+        <div id="answer-buttons" class="answer-grid">
+          <label>
+            <input type="radio" name="option" />
+            <span id="option1">Strongly Disagree</span>
+        </label>
+        <label>
+            <input type="radio" name="option"/>
+            <span id="option2">Disagree</span>
+        </label>
+        <label class="option">
+            <input type="radio" name="option"/>
+            <span id="option3">Neutral</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="option"/>
+          <span id="option4">Agree</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="option"/>
+        <span id="option5">Strongly Agree</span>
+    </label>
+    <div class="control-area">
+      <button id="prev-btn" class="move-btn btn hide">Previous</button>
+      <button id="next-btn" class="move-btn btn hide">Next</button>
     </div>
-    <div class="result-area">
-<h3> Personality Result: </h3>
-<p id="result">Your Personality Description will load after you submit.</p>
     </div>
+    </div>
+    <div class="control-area">
+      <button id="start-btn" class="start-btn btn">Start</button>
+    </div>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>
