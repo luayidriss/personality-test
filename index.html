@@ -20,23 +20,23 @@ Each of the following statements is answered on a Disagree-Agree scale. <br>Answ
       </div>
         <div id="answer-buttons" class="answer-grid">
           <label>
-            <input type="radio" name="option" />
+            <input type="radio" name="option" class="radio"/>
             <span id="option1">Strongly Disagree</span>
         </label>
         <label>
-            <input type="radio" name="option"/>
+            <input type="radio" name="option" class="radio"/>
             <span id="option2">Disagree</span>
         </label>
         <label class="option">
-            <input type="radio" name="option"/>
+            <input type="radio" name="option"class="radio"/>
             <span id="option3">Neutral</span>
         </label>
         <label class="option">
-          <input type="radio" name="option"/>
+          <input type="radio" name="option"class="radio"/>
           <span id="option4">Agree</span>
       </label>
       <label class="option">
-        <input type="radio" name="option"/>
+        <input type="radio" name="option"class="radio"/>
         <span id="option5">Strongly Agree</span>
     </label>
     <div class="control-area">
@@ -48,7 +48,11 @@ Each of the following statements is answered on a Disagree-Agree scale. <br>Answ
     </div>
     <div id="result-area" class="hide">
       <h2>Personality Description</h2>
-      <span id="extroversion"></span> <span id="agreeableness"></span> <span id="conscientiousness"></span> <span id="neuroticism"></span> <span id="openness"></span>
+      <p>Openness: <span class="pdescriptor"></span></p>
+      <p>Conscientiousness: <span class="pdescriptor"></span></p>
+      <p>Extroversion: <span class="pdescriptor"></span></p>
+      <p>Agreableness: <span class="pdescriptor"></span></p>
+      <p>Neuroticism: <span class="pdescriptor"></span></p>
       <button id="reset-btn" class="btn">Reset</button>
     </div>
     <div class="control-area">
