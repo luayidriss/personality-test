@@ -33,15 +33,15 @@ let userTotals=[];
 
 let personalityDescriptors =[
    'You are inventive and curious,let people in your life know that you love to be challenged. Make sure you have creative outlets to express yourself. You also have to make sure your spouse or partner knows your level of adventure so your needs are met.',
-'You are consistent and cautious. You can easily be accustomed to habits and you can rely in your area of expertise.',
-'You are efficient and organized. you want to make sure the people around you respect your desire to have a plan.',
-'You are more easy-going and laid back. It does not come naturally for you to be organized, you like to go with the flow.',
-'You are outgoing and energetic. You like to be with people.',
-'You are more solitary and reserved, be sure not to force yourself to try being extroverted. Honor your introversion.',
-'You are friendly and compassionate, understanding others comes easy to you.',
-'You are more analytical and detached. Empathy is not a natural instinct to you, that is okay. Know that you must make more mental effort to put yourself in their shoes.',
-'You are sensitive and tend to be more nervous. You have to know your triggers–what makes you worry? And your calmers–what helps you calm down? So you can be more in control of your moods.',
-'You tend to be more secure and stable in your emotions.',
+   'You are efficient and organized. you want to make sure the people around you respect your desire to have a plan.',
+   'You are outgoing and energetic. You like to be with people.',
+   'You are friendly and compassionate, understanding others comes easy to you.',
+   'You are sensitive and tend to be more nervous. You have to know your triggers–what makes you worry? And your calmers–what helps you calm down? So you can be more in control of your moods.',
+   'You are consistent and cautious. You can easily be accustomed to habits and you can rely in your area of expertise.',
+   'You are more easy-going and laid back. It does not come naturally for you to be organized, you like to go with the flow.',
+   'You are more solitary and reserved, be sure not to force yourself to try being extroverted. Honor your introversion.',
+   'You are more analytical and detached. Empathy is not a natural instinct to you, that is okay. Know that you must make more mental effort to put yourself in their shoes.',
+    'You tend to be more secure and stable in your emotions.',
 ]
      
 // Variables
@@ -99,19 +99,19 @@ nextButton.addEventListener('click', loadNextQuestion)
 function loadNextQuestion(){
     counter++;
     const selectedOption = document.querySelector('input[type="radio"]:checked');
-    var answerScore = parseInt(selectedOption.nextElementSibling.getAttribute('data-value'));
-    userValues.push(answerScore)
-    if(counter < 10){
-        if(!selectedOption) {
-            alert('Please select your answer!');}
+    if(!selectedOption){
+        alert('Please select your answer!');}
         else{
-            generateQuestions()  
-            }
-    }
-    else{
-        nextButton.classList.add('hide');
-        finishButton.classList.remove('hide')
-    }
+        var answerScore = parseInt(selectedOption.nextElementSibling.getAttribute('data-value'));
+        userValues.push(answerScore)
+        if(counter < 10){
+            generateQuestions() 
+        }
+        else{
+            nextButton.classList.add('hide');
+            finishButton.classList.remove('hide')
+        }
+         }
 }
 // Previous and Remove Score Button
 prevButton.addEventListener('click', loadPreviousQuestion)
@@ -146,7 +146,7 @@ function showResult(){
             personalityText[i].innerHTML = personalityDescriptors[i]
         }
         else{
-            personalityText[i].innerHTML = personalityDescriptors[i+1]
+            personalityText[i].innerHTML = personalityDescriptors[i+5]
         }
     }
 }
@@ -156,7 +156,7 @@ restartButton.addEventListener('click', restartTest)
 function restartTest (){
     resultArea.classList.add('hide')
     startButton.classList.remove('hide')
-    counter -= 9;
-    userValues.length = 0
-    userTotals.length = 0
+    counter -= 10;
+    userValues.length = 0;
+    userTotals.length = 0;
 }
