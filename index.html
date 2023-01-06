@@ -17,36 +17,51 @@
         <p id="instruction-title">Instructions</p>
         <br>
         <p id="instructions">
-          Each of the following statements is answered on a Disagree-Agree scale. <br>Answer them honestly in order to have a unique personality description generated. <br>If you would like to fill the test in again, press the reset button below.
+          Each of the following statements is answered on a Disagree-Agree scale. 
+          <br>Answer them honestly in order to have a unique personality description generated. 
+          <br>If you would like to fill the test in again, press the reset button at the end or refresh the page.
+          <br> You can run through the statements with your left-right arrow keys, and submit at the end with the Enter key.
         </p>
         <br>
         <button id="start-btn" class="start-btn btn">Start</button>
       </div>
-      <div id="test-area" class="test-area hide">
+      <div id="test-area" class="hide">
         <div id="prompt-container">
           <div id="prompts">Prompt</div>
         </div>
-        <div id="answer-buttons" class="answer-grid">
-            <label>
-              <input type="radio" name="option" class="radio"/>
-              <span id="option1">Strongly Disagree</span>
-            </label>
-            <label>
+        <div id="answer-buttons">
+          <ul>
+            <li>
+              <label>
+                <input type="radio" name="option" class="radio"/>
+                <span id="option1">Strongly Disagree</span>
+              </label>
+            </li>
+            <li>
+              <label>
               <input type="radio" name="option" class="radio"/>
               <span id="option2">Disagree</span>
-            </label>
-            <label class="option">
-              <input type="radio" name="option"class="radio"/>
-              <span id="option3">Neutral</span>
-            </label>
-            <label class="option">
-              <input type="radio" name="option"class="radio"/>
-              <span id="option4">Agree</span>
-            </label>
-            <label class="option">
-              <input type="radio" name="option"class="radio"/>
-              <span id="option5">Strongly Agree</span>
-            </label>
+              </label>
+            </li>
+            <li>
+              <label class="option">
+                <input type="radio" name="option"class="radio"/>
+                <span id="option3">Neutral</span>
+              </label>
+            </li>
+            <li>
+              <label class="option">
+                <input type="radio" name="option"class="radio"/>
+                <span id="option4">Agree</span>
+              </label>
+            </li>
+            <li>
+              <label class="option">
+                <input type="radio" name="option"class="radio"/>
+                <span id="option5">Strongly Agree</span>
+              </label>
+            </li>
+          </ul>
           </div>
           <div class="control-area">
               <button id="prev-btn" class="move-btn btn hide">Previous</button>

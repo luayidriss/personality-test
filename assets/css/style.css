@@ -28,6 +28,8 @@ p{
 .logo {
     height: 40px;
     padding-right: 5px;
+    position: relative;
+    top: 6px;
 }
 
 /* Card */
@@ -42,19 +44,23 @@ p{
 }
 
 #card{
-  width: 750px;
-  height: 300px;
+  width: 80vw;
+  height: 330px;
   background-color: #fff;
   border-radius: 5px;
   border: solid black;
   border-width: thick;
   position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Initial Page*/
 #initial-page{
   position: absolute;
-  width: 100%;
+  height: auto;
+  width: 98.3%;
+  padding: 10px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -64,15 +70,17 @@ p{
 }
 
 /* Test Area */
-.test-area{
+#test-area{
   position:absolute;
-  width:100%;
+  width: 98.3%;
+  height: 93.75%;
+  padding: 10px;
 }
 
 #prompt-container{
-  width:100%;
+  width:97.2%;
   position: absolute;
-  top: 50px;
+  top: 15%;
   font-weight: 600;
 }
 #prompts{
@@ -81,8 +89,16 @@ p{
 
 #answer-buttons{
   position:absolute;
-  width:100%;
-  top: 136.4px;
+  width:97.2%;
+  top: 45%;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+}
+li {
+  display: inline-block;
 }
 
   input[type="radio"] {
@@ -94,15 +110,15 @@ p{
   .control-area{
     width: auto;
     position: absolute;
-    top: 250px;
-    right: 10px;
+    top: 83%;
+    right: 0.7%;
   }
 
   #counter-area{
     width: auto;
     position: absolute;
-    top: 250px;
-    left: 20px;
+    top: 83%;
+    left: 2.7%;
   }
 
   #counter-area p{
@@ -113,10 +129,12 @@ p{
 /* Result Area */
 
 #result-area{
-  position:absolute;
-  width:100%;
+  position: absolute;
+  width: 98.3%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(0, -50%);
+  padding: 10px;
+  height: 94%;
 }
 
 #result-area h2{
@@ -125,7 +143,15 @@ p{
 
 #result-area p{
   text-align: justify;
-  margin: 10px 15px;
+  margin: 10px 5px;
+  font-weight: bold;
+}
+
+.pdescriptor{
+  font-weight: 400;
+}
+#reset-btn{
+  margin: 5px;
 }
 /* Buttons */
 
@@ -169,4 +195,43 @@ p{
 
 .hide {
   display: none;
+}
+
+/* Media Queries */
+@media screen and (max-width: 420px) {
+  #card {
+    height: 350px
+  }
+  .test-area{
+    width:94%;
+  }
+  #initial-page, #test-area, #result-area, #prompt-container, #answer-buttons, #counter-area{
+    width: 93.75%;
+  }
+  #prompts{
+    font-size: 21px;
+  }
+  #prompt-container{
+    top:5%;
+}
+.control-area{
+  top: 78%;
+  right: 23%;
+}
+#counter-area{
+  top: 89%
+}
+#counter-area p{
+  font-size: 13px;
+}
+li {
+  display: block;
+  text-align: left;
+}
+#answer-buttons{
+  top:30%;
+}
+#card{
+  height: 450px;
+}
 }

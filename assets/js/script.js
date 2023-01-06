@@ -98,7 +98,19 @@ function runGame(){
     }
     
 // Next and Tally Button
-nextButton.addEventListener('click', loadNextQuestion)
+nextButton.addEventListener('click', loadNextQuestion);
+document.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowRight") {
+        if( counter < 10){
+        loadNextQuestion();
+        } else{
+            nextButton.classList.add('hide');
+            finishButton.classList.remove('hide');
+            alert("This is the last question. Please submit by clicking on the Enter Key or the Finish Button.")
+        }}
+    else{
+        }
+    })
 function loadNextQuestion(){
     const selectedOption = document.querySelector('input[type="radio"]:checked');
     if(!selectedOption){
@@ -112,18 +124,23 @@ function loadNextQuestion(){
         }
         else{
             nextButton.classList.add('hide');
-            finishButton.classList.remove('hide')
+            finishButton.classList.remove('hide');
         }
          }
 }
 // Previous and Remove Score Button
-prevButton.addEventListener('click', loadPreviousQuestion)
+prevButton.addEventListener('click', loadPreviousQuestion);
+document.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowLeft") {
+        loadPreviousQuestion();
+    }
+});
 function loadPreviousQuestion(){
-        counter--;
-        if (counter < 0){
-            alert('This is the first question')
+        if (counter <= 0){
+            alert('This is the first statement!')
         }
         else {
+        counter--;
         generateQuestions()
         userValues.pop();
         } 
@@ -138,6 +155,11 @@ function calculateScore(){
 }
 // Finish Button and Show Personality Description
 finishButton.addEventListener('click', showResult)
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        showResult();
+    }
+});
 function showResult(){
     testArea.classList.add('hide')
     prevButton.classList.add('hide')
@@ -152,13 +174,11 @@ function showResult(){
             personalityText[i].innerHTML = personalityDescriptors[i+5]
         }
     }
-    document.getElementById("card").style.height="400px"
 }
 
 //Restart Button Function
 restartButton.addEventListener('click', restartTest)
 function restartTest (){
-    document.getElementById("card").style.height="300px"
     resultArea.classList.add('hide')
     initialPage.classList.remove('hide')
     counter -= 10;
