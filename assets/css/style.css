@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700&display=swap');
 
 body{
-    background-color: white;
+    background-color: #007ea7;
     font-family: Manrope, sans-serif;
     font-weight: 400;
     text-align: center;
@@ -10,11 +10,16 @@ body{
     margin: 0;
 }
 
+p{
+  margin: 0;
+}
+
 /* Heading */
 
 .heading {
     text-align: center;
     font-size: 2.5rem;
+    height: 7vh;
     background-color: #C4D7F2;
     margin: 0;
     padding: 0.5rem;
@@ -25,12 +30,59 @@ body{
     padding-right: 5px;
 }
 
+/* Card */
+#page{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 93vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#card{
+  width: 750px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: solid black;
+  border-width: thick;
+  position: relative;
+}
+
+/* Initial Page*/
+#initial-page{
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#instruction-title{
+  font-size: 25px;
+  font-weight: bold;
+}
+
 /* Test Area */
 .test-area{
-    background-color: #C4D7F2;
-    font-weight: 600;
-    width: 100%;
-    height: 300px;
+  position:absolute;
+  width:100%;
+}
+
+#prompt-container{
+  width:100%;
+  position: absolute;
+  top: 50px;
+  font-weight: 600;
+}
+#prompts{
+  font-size: 25px;
+}
+
+#answer-buttons{
+  position:absolute;
+  width:100%;
+  top: 136.4px;
 }
 
   input[type="radio"] {
@@ -38,7 +90,44 @@ body{
     width: 1.2rem;
     accent-color: #ca5c6d ;
   }
-/* Control Buttons */
+
+  .control-area{
+    width: auto;
+    position: absolute;
+    top: 250px;
+    right: 10px;
+  }
+
+  #counter-area{
+    width: auto;
+    position: absolute;
+    top: 250px;
+    left: 20px;
+  }
+
+  #counter-area p{
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+/* Result Area */
+
+#result-area{
+  position:absolute;
+  width:100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#result-area h2{
+  margin: 0 0 20px 0;
+}
+
+#result-area p{
+  text-align: justify;
+  margin: 10px 15px;
+}
+/* Buttons */
 
 .btn {
   background-color: #EF798A;
@@ -65,7 +154,7 @@ body{
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin: 0 5px 10px 0;
+  margin: 0 5px;
 }
 
 .btn:hover,

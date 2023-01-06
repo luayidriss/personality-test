@@ -46,9 +46,11 @@ let personalityDescriptors =[
      
 // Variables
 const startButton = document.getElementById("start-btn")
+const initialPage = document.getElementById("initial-page")
 const nextButton = document.getElementById("next-btn")
 const prevButton = document.getElementById("prev-btn")
 const finishButton = document.getElementById("finish-btn")
+const counterText = document.getElementById("counter")
 const testArea = document.getElementById("test-area")
 const radioButtons = document.getElementsByClassName('radio')
 const resultArea = document.getElementById("result-area")
@@ -79,6 +81,7 @@ function generateQuestions(){
         if(radioButtons[k].checked)
         radioButtons[k].checked = false;
     }
+    counterText.innerHTML = `${counter+1} `
 
 }
 
@@ -86,7 +89,7 @@ function generateQuestions(){
 startButton.addEventListener('click', runGame)
 
 function runGame(){
-    startButton.classList.add('hide')
+    initialPage.classList.add('hide')
     testArea.classList.remove('hide')
     for (let i = 0; i < moveButton.length; i++ ) {
         moveButton[i].classList.remove('hide');
@@ -97,13 +100,13 @@ function runGame(){
 // Next and Tally Button
 nextButton.addEventListener('click', loadNextQuestion)
 function loadNextQuestion(){
-    counter++;
     const selectedOption = document.querySelector('input[type="radio"]:checked');
     if(!selectedOption){
         alert('Please select your answer!');}
         else{
         var answerScore = parseInt(selectedOption.nextElementSibling.getAttribute('data-value'));
         userValues.push(answerScore)
+        counter++;
         if(counter < 10){
             generateQuestions() 
         }
@@ -149,13 +152,15 @@ function showResult(){
             personalityText[i].innerHTML = personalityDescriptors[i+5]
         }
     }
+    document.getElementById("card").style.height="400px"
 }
 
 //Restart Button Function
 restartButton.addEventListener('click', restartTest)
 function restartTest (){
+    document.getElementById("card").style.height="300px"
     resultArea.classList.add('hide')
-    startButton.classList.remove('hide')
+    initialPage.classList.remove('hide')
     counter -= 10;
     userValues.length = 0;
     userTotals.length = 0;
