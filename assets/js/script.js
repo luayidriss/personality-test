@@ -96,28 +96,41 @@ function runGame(){
       }
     generateQuestions()
     }
+
     
 // Next and Tally Button
 nextButton.addEventListener('click', loadNextQuestion);
 document.addEventListener("keydown", function(event) {
-    if (event.key === "ArrowRight") {
+    if (event.key === "Enter") {
         if( counter < 10){
         loadNextQuestion();
         } else{
             nextButton.classList.add('hide');
             finishButton.classList.remove('hide');
-            alert("This is the last question. Please submit by clicking on the Enter Key or the Finish Button.")
+            alert("This is the last question. Press Enter to Submit");
+            counter++
         }}
     else{
         }
     })
+
+document.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            if( counter > 11){
+                showResult()
+            }
+        } else{
+            loadNextQuestion();
+        }
+    })
+
 function loadNextQuestion(){
     const selectedOption = document.querySelector('input[type="radio"]:checked');
     if(!selectedOption){
         alert('Please select your answer!');}
         else{
         var answerScore = parseInt(selectedOption.nextElementSibling.getAttribute('data-value'));
-        userValues.push(answerScore)
+        userValues.push(answerScore);
         counter++;
         if(counter < 10){
             generateQuestions() 
@@ -131,7 +144,7 @@ function loadNextQuestion(){
 // Previous and Remove Score Button
 prevButton.addEventListener('click', loadPreviousQuestion);
 document.addEventListener("keydown", function(event) {
-    if (event.key === "ArrowLeft") {
+    if (event.key === "Backspace") {
         loadPreviousQuestion();
     }
 });
@@ -155,11 +168,6 @@ function calculateScore(){
 }
 // Finish Button and Show Personality Description
 finishButton.addEventListener('click', showResult)
-document.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        showResult();
-    }
-});
 function showResult(){
     testArea.classList.add('hide')
     prevButton.classList.add('hide')
@@ -181,7 +189,7 @@ restartButton.addEventListener('click', restartTest)
 function restartTest (){
     resultArea.classList.add('hide')
     initialPage.classList.remove('hide')
-    counter -= 10;
+    counter == 0;
     userValues.length = 0;
     userTotals.length = 0;
 }
