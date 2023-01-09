@@ -1,3 +1,14 @@
+// Hello.
+//
+// This is JSHint, a tool that helps to detect errors and potential
+// problems in your JavaScript code.
+//
+// To start, simply enter some JavaScript anywhere on this page. Your
+// report will appear on the right side.
+//
+// Additionally, you can toggle specific options in the Configure
+// menu.
+
 // Questions, Scores, User Inputs and Personality Descriptors
 
 const questions = [
@@ -43,7 +54,7 @@ const questions = [
         "question": 'I see myself as someone who gets nervous easily.',
         "optionScore": [1, 2, 3, 4, 5],  
     },
-]
+];
 
 let userValues = [];
 let userTotals = [];
@@ -66,49 +77,49 @@ let personalityDescriptors = [
     'You are more solitary and reserved, be sure not to force yourself to try being extroverted. Honor your introversion.',
     'You are more analytical and detached. Empathy is not a natural instinct to you, that is okay. Know that you must make more mental effort to put yourself in their shoes.',
     'You tend to be more secure and stable in your emotions.',
-]
+];
 
 
-const startButton = document.getElementById("start-btn")
-const initialPage = document.getElementById("initial-page")
-const nextButton = document.getElementById("next-btn")
-const prevButton = document.getElementById("prev-btn")
-const finishButton = document.getElementById("finish-btn")
-const counterText = document.getElementById("counter")
-const testArea = document.getElementById("test-area")
-const radioButtons = document.getElementsByClassName('user-option')
-const resultArea = document.getElementById("result-area")
-const restartButton = document.getElementById("reset-btn")
-const moveButton = document.getElementsByClassName("move-btn")
+const startButton = document.getElementById("start-btn");
+const initialPage = document.getElementById("initial-page");
+const nextButton = document.getElementById("next-btn");
+const prevButton = document.getElementById("prev-btn");
+const finishButton = document.getElementById("finish-btn");
+const counterText = document.getElementById("counter");
+const testArea = document.getElementById("test-area");
+const radioButtons = document.getElementsByClassName('user-option');
+const resultArea = document.getElementById("result-area");
+const restartButton = document.getElementById("reset-btn");
+const moveButton = document.getElementsByClassName("move-btn");
 
 // Prompt that is shown to user for result.
-const promptElement = document.getElementById("prompts")
+const promptElement = document.getElementById("prompts");
 
 // Radio Buttons that let you rate your agreement with the prompt
 const optionElements = document.getElementsByClassName("user-option");
 
 // The text that is shown to the user based on their calculated score
-const personalityText = document.getElementsByClassName('pdescriptor')
+const personalityText = document.getElementsByClassName('pdescriptor');
 
-let counter = 0
+let counter = 0;
 
 //Load Questions
 
 function generateQuestions() {
-    promptElement.innerHTML = `${questions[counter].question}`
+    promptElement.innerHTML = `${questions[counter].question}`;
 
     for (let j = 0; j < optionElements.length; j++) {
-        optionElements[j].setAttribute("data-value", `${questions[counter].optionScore[j]}`)
+        optionElements[j].setAttribute("data-value", `${questions[counter].optionScore[j]}`);
     }
     for (let k = 0; k < radioButtons.length; k++) {
         radioButtons[k].checked = false;
     }
-    counterText.innerHTML = `${counter+1} `
+    counterText.innerHTML = `${counter+1}`;
 
 }
  // To bring back the option the user selected for the previous question
 function revertOptionState (){
-    let lastValue = userValues[userValues.length - 1]
+    let lastValue = userValues[userValues.length - 1];
     let prevOption = document.querySelector('input[data-value="' + lastValue + '"]');
     prevOption.checked = true ;
 }
@@ -121,7 +132,7 @@ function runGame() {
     for (let i = 0; i < moveButton.length; i++) {
         moveButton[i].classList.remove('hide');
     }
-    generateQuestions()
+    generateQuestions();
 }
 
 
@@ -144,7 +155,7 @@ function loadNextQuestion() {
     userValues.push(answerScore);
     counter++;
     if (counter < 10) {
-        generateQuestions()
+        generateQuestions();
     } 
     
     if (counter == 9) {
@@ -156,7 +167,7 @@ function loadNextQuestion() {
 
 function loadPreviousQuestion() {
     if (counter <= 0) {
-        alert('This is the first statement!')
+        alert('This is the first statement!');
     } else {
         if(counter == 9){
         nextButton.classList.remove('hide');
@@ -167,7 +178,7 @@ function loadPreviousQuestion() {
         userValues.pop();
         }else{
             counter--;
-            generateQuestions()
+            generateQuestions();
             revertOptionState();
             userValues.pop();
         }
@@ -184,8 +195,8 @@ function loadPreviousQuestion() {
  */
 
 function calculateScore() {
-    for (i = 0; i < 5; i++) {
-        userTotals.push(userValues[i] + userValues[i + 5])
+    for (let l = 0; l < 5; l++) {
+        userTotals.push(userValues[l] + userValues[l + 5]);
     }
 }
 // Finish Button and Show Personality Description
@@ -194,34 +205,39 @@ function showResult() {
     const selectedOption = document.querySelector('input[type="radio"]:checked');
     let answerScore = parseInt(selectedOption.dataset.value);
     userValues.push(answerScore);
-    testArea.classList.add('hide')
-    prevButton.classList.add('hide')
-    finishButton.classList.add('hide')
+    testArea.classList.add('hide');
+    prevButton.classList.add('hide');
+    finishButton.classList.add('hide');
     calculateScore();
+  	generatePersonality();
+}
+
 /**
- * This part of the function iterates through the User's Total scores
+ * This function iterates through the User's Total scores
  * If the score is higher or equal to 5 then it shows the user the personality descriptor that matches a high score in that category
  * If the score is lower, then its shows the descriptor that matches a low score in that category.
  * @param {userTotals} This is an array of the user's total score in each of the five categories
  * @returns {personalityText} Edits the inner HTML of each of the categories' personal descriptions to match with the score of the category.
  */
+  
+  function generatePersonality(){
 
-    for (i = 0; i < personalityText.length; i++) {
-        if (userTotals[i] >= 5) {
-            personalityText[i].innerHTML = personalityDescriptors[i]
+    for (let m = 0; m < personalityText.length; m++) {
+        if (userTotals[m] >= 5) {
+            personalityText[m].innerHTML = personalityDescriptors[m];
         } else {
-            personalityText[i].innerHTML = personalityDescriptors[i + 5]
+            personalityText[m].innerHTML = personalityDescriptors[m + 5];
         }
     }
-    resultArea.classList.remove('hide')
+    resultArea.classList.remove('hide');
 }
 
 //Restart Button Function
-restartButton.addEventListener('click', restartTest)
+restartButton.addEventListener('click', restartTest);
 
 function restartTest() {
-    resultArea.classList.add('hide')
-    initialPage.classList.remove('hide')
+    resultArea.classList.add('hide');
+    initialPage.classList.remove('hide');
     userValues.length = 0;
     userTotals.length = 0;
     counter = 0;
