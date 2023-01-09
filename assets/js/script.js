@@ -1,4 +1,4 @@
-// Questions, Answers and Scores
+// Questions, Scores, User Inputs and Personality Descriptors
 
 const questions = [
     {
@@ -48,10 +48,12 @@ const questions = [
 let userValues = [];
 let userTotals = [];
 
-// Description, These are specific personality descriptors based on the five categories 
-// The descriptions are in order of the five categories Openness, Conscientiousness, Extroversion, Agreeableness and Neuroticism
-// If you score high (above 5) in these categories, then you will get the personality descriptor from the first 5 descriptions
-// If you score low (below 5 exclusive), then you will get the personality descriptor from the last 5 descriptions.
+/**
+ * Description, These are specific personality descriptors based on the five categories
+ * The descriptions are in order of the five categories Openness, Conscientiousness, Extroversion, Agreeableness and Neuroticism
+ * If you score high (above 5) in these categories, then you will get the personality descriptor from the first 5 descriptions
+ * If you score low (below 5 exclusive), then you will get the personality descriptor from the last 5 descriptions.
+ */  
 
 let personalityDescriptors = [
     'You are inventive and curious,let people in your life know that you love to be challenged. Make sure you have creative outlets to express yourself. You also have to make sure your spouse or partner knows your level of adventure so your needs are met.',
@@ -173,10 +175,14 @@ function loadPreviousQuestion() {
 }
 
 /**
- * Describe what this function do.
- * @param {type} name description
- * @returns {type} description
+ * This function calculates a score for each other five categories mentioned above. 
+ * It adds the values for i and i+5, since the questions are ordered in the way that they both relate to one category
+ * while not having two consecutive prompts that relate to the same category.
+ * @param {userValues} This is an array of all user values
+ * @returns {userTotals} It would return an array with a total score for each of the five categories.
+ *  This total score is composed of an answer value of the two questions that relate to the category.
  */
+
 function calculateScore() {
     for (i = 0; i < 5; i++) {
         userTotals.push(userValues[i] + userValues[i + 5])
@@ -192,6 +198,14 @@ function showResult() {
     prevButton.classList.add('hide')
     finishButton.classList.add('hide')
     calculateScore();
+/**
+ * This part of the function iterates through the User's Total scores
+ * If the score is higher or equal to 5 then it shows the user the personality descriptor that matches a high score in that category
+ * If the score is lower, then its shows the descriptor that matches a low score in that category.
+ * @param {userTotals} This is an array of the user's total score in each of the five categories
+ * @returns {personalityText} Edits the inner HTML of each of the categories' personal descriptions to match with the score of the category.
+ */
+
     for (i = 0; i < personalityText.length; i++) {
         if (userTotals[i] >= 5) {
             personalityText[i].innerHTML = personalityDescriptors[i]
