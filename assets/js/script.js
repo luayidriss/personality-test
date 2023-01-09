@@ -185,6 +185,9 @@ function calculateScore() {
 // Finish Button and Show Personality Description
 function showResult() {
     if (!checkQuestionAnswered()) return;
+    const selectedOption = document.querySelector('input[type="radio"]:checked');
+    let answerScore = parseInt(selectedOption.dataset.value);
+    userValues.push(answerScore);
     testArea.classList.add('hide')
     prevButton.classList.add('hide')
     finishButton.classList.add('hide')
