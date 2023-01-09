@@ -69,10 +69,10 @@ p{
   font-weight: bold;
 }
 
-#bold{
+.bold{
   font-weight: bold;
 }
-#bold-red{
+.red{
   color: red;
   font-weight: bold;
 }
