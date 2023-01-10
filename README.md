@@ -54,7 +54,14 @@ Multiple tests have also been conducted to make sure the correct scores are bein
 - CSS 
   -  No errors were found when passing through the official [(Jigsaw) validator]([https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fluayidriss.github.io%2Fpersonality-test%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en])
 - Javascript
-  - No errors were returned when passing through the official [Jshint] 
+  - No errors were found when passing through the official [Jshint validator](https://jshint.com/)
+      - The following metrics were returned: 
+      - There are 10 functions in this file.
+      - Function with the largest signature take 0 arguments, while the median is 0.
+      - Largest function has 13 statements in it, while the median is 5.
+      - The most complex function has a cyclomatic complexity value of 4 while the median is 2.
+
+The most complex function has a cyclomatic complexity value of 4 while the median is 2.
 
 ## Deployment
 
