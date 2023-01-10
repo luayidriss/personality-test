@@ -2,7 +2,7 @@
 
 This personality test web application is based off the Myers-Briggs Type Indicator that includes 5 personality categories. You will be able to generate a unique personality description based on your agreement to personality statements. This test was taught to be in an Introduction to Psychology class, therefore the target audience here is Psychology enthusiasts but could also be anyone who wishes to perform a personality on themselves. It will be useful for both two see how answering these statements informs how strong they rate on each of the five personality descriptors. 
 
-![Personality Test](https://github.com/luayidriss/personality-test/blob/448e814cb99a698e63c04ae1f9964a233ed4b355/readme-images/main-image.png)
+![Personality Test](https://github.com/luayidriss/personality-test/blob/b0bbef9929b7371cfc9066c42039120386d2c213/readme-images/main-image.png)
 
 ## Features 
 
