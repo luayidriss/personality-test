@@ -2,7 +2,7 @@
 
 This personality test web application is based off the Myers-Briggs Type Indicator that includes 5 personality categories. You will be able to generate a unique personality description based on your agreement to personality statements. This test was taught to be in an Introduction to Psychology class, therefore the target audience here is Psychology enthusiasts but could also be anyone who wishes to perform a personality on themselves. It will be useful for both two see how answering these statements informs how strong they rate on each of the five personality descriptors. 
 
-![Personality Test](https://github.com/lucyrush/readme-template/blob/master/media/love_running_mockup.png)
+![Personality Test](https://github.com/luayidriss/personality-test/blob/448e814cb99a698e63c04ae1f9964a233ed4b355/readme-images/main-image.png)
 
 ## Features 
 
@@ -17,7 +17,7 @@ The website is only intended for desktops and smartphones.
   - The start page shows the instructions to follow to perform the test accurately. 
   - It includes a start button that will switch from the initial page to the test page.
 
-![Start Page](https://github.com/lucyrush/readme-template/blob/master/media/love_running_nav.png)
+![Start Page](https://github.com/luayidriss/personality-test/blob/448e814cb99a698e63c04ae1f9964a233ed4b355/readme-images/start-page.png)
 
 - __The Test Page__
 
@@ -27,14 +27,14 @@ The website is only intended for desktops and smartphones.
   - The counter allows for the user to know their progress in the test, how many statements they answered so far.
   - The move buttons allow you to go to next prompts but also to previous ones while seeing your previous response and being able to change it. Only at the last prompt will the user not be able to go to the next question but will only be shown the finish button. The finish button takes you to the results page.
 
-![Test Page](https://github.com/lucyrush/readme-template/blob/master/media/love_running_landing.png)
+![Test Page](https://github.com/luayidriss/personality-test/blob/448e814cb99a698e63c04ae1f9964a233ed4b355/readme-images/test-page.png)
 
 - __Results Page__
 
   - The results page has a header and 5 paragraphs that represent each of the 5 personality categories. Each paragraph should include a personality description that relates to whether you scored high or low on that category.
   - The reset button below allows you to retake the test. It initializes all the previous data as to not have any interference with the new test data.
 
-![Results Page](https://github.com/lucyrush/readme-template/blob/master/media/love_running_ethos.png)
+![Results Page](https://github.com/luayidriss/personality-test/blob/448e814cb99a698e63c04ae1f9964a233ed4b355/readme-images/result-page.png)
 
 ### Features Left to Implement
 
@@ -68,7 +68,9 @@ The live link can be found here - [https://luayidriss.github.io/personality-test
 
 ## Credits 
 
-
+I was insipired and worked roughly along the structures of both of these tutorials ([https://github.com/edubz99/Simple-Personality-Quiz]) ([https://www.youtube.com/watch?v=riDzcEQbX6k]).
+I have my psychology class and professors to thank for inspiring me to pursue this web application.
+My mentor at Code Insitute has been great help, without him I would not be as critical of my code.
 
 ### Content 
 
