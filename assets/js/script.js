@@ -1,14 +1,3 @@
-// Hello.
-//
-// This is JSHint, a tool that helps to detect errors and potential
-// problems in your JavaScript code.
-//
-// To start, simply enter some JavaScript anywhere on this page. Your
-// report will appear on the right side.
-//
-// Additionally, you can toggle specific options in the Configure
-// menu.
-
 // Questions, Scores, User Inputs and Personality Descriptors
 
 const questions = [
@@ -114,7 +103,7 @@ function generateQuestions() {
     for (let k = 0; k < radioButtons.length; k++) {
         radioButtons[k].checked = false;
     }
-    counterText.innerHTML = `${counter+1}`;
+    counterText.innerHTML = `${counter+1} `;
 
 }
  // To bring back the option the user selected for the previous question
